@@ -9,6 +9,7 @@ define('DB_USER', 'root');
 define('DB_PASS', '');
 define('APP_URL', 'http://localhost/ReflectnRise');
 
+
 // Base application URL
 // Example local: http://localhost/reflect-rise-php-auth-package
 // Example live: https://yourdomain.com/reflect-rise

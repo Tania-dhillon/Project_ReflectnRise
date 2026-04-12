@@ -118,7 +118,7 @@ if ($currentHour >= 4 && $currentHour < 12) {
             <i class="bi <?= $greetingIcon ?>"></i> <?= $greetingText ?>
         </div>
         <h1 class="welcome-title"><?= e(ucfirst($welcomeName)); ?></h1>
-        <p class="welcome-text">How are you feeling today?? Take a moment to check in with yourself.</p>
+        <p class="welcome-text">How are you feeling today? Take a moment to check in with yourself.</p>
     </section>
 
     <div class="mb-4">
