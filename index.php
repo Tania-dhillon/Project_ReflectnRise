@@ -1,10 +1,8 @@
 <?php
+// Homepage
 // ------------------------------------------------------------
-// Landing / homepage
-// ------------------------------------------------------------
-// This is the public homepage of Reflect & Rise.
-// It includes brief information, benefits, features,
-// FAQ section, and call-to-action buttons.
+// This is the homepage of Reflect & Rise.
+// It includes brief information, benefits, features, FAQ section, buttons...
 // ------------------------------------------------------------
 
 require_once __DIR__ . '/includes/header.php';
@@ -234,7 +232,7 @@ require_once __DIR__ . '/includes/header.php';
                 <div class="testimonial-card">
                     <div class="stars">★★★★★</div>
                     <p>“I never realised how much my sleep was affecting my mood until I saw the patterns in my insights.”</p>
-                    <small>Maya, 2nd Year Psychology</small>
+                    <small>Esha, 2nd Year Psychology</small>
                 </div>
             </div>
             <div class="col-md-4">
@@ -248,7 +246,7 @@ require_once __DIR__ . '/includes/header.php';
                 <div class="testimonial-card">
                     <div class="stars">★★★★★</div>
                     <p>“Having a private space to journal that also shows me trends over time is exactly what I needed.”</p>
-                    <small>Sofia, Masters Student</small>
+                    <small>Sonia, Masters Student</small>
                 </div>
             </div>
         </div>

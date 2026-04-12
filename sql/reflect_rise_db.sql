@@ -1,9 +1,5 @@
--- ------------------------------------------------------------
+
 -- Reflect & Rise database structure
--- ------------------------------------------------------------
--- Import this file in phpMyAdmin or MySQL to create the DB
--- and required tables for login/signup/password reset.
--- ------------------------------------------------------------
 
 CREATE DATABASE IF NOT EXISTS reflect_rise_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE reflect_rise_db;
