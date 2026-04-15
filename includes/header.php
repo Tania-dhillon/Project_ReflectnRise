@@ -1,6 +1,6 @@
 <?php
 // ------------------------------------------------------------
-// Shared HTML header
+// HTML header
 // ------------------------------------------------------------
 // Include this file at the top of all public pages to load
 // Bootstrap, icons, fonts, and site stylesheet.
@@ -27,6 +27,6 @@ require_once __DIR__ . '/auth.php';
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Custom project stylesheet -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets\css\style.css" rel="stylesheet">
 </head>
 <body>

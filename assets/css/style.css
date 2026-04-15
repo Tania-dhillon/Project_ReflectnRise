@@ -3,7 +3,7 @@
    ------------------------------------------------------------
    This stylesheet controls the homepage and auth page design.
    It uses Bootstrap for layout and custom CSS for the visual
-   look inspired by the shared references.
+
    ------------------------------------------------------------ */
 
 :root {
@@ -110,6 +110,7 @@ h1, h2, h3, .hero-title, .section-title {
     padding: 56px 0 90px;
 }
 
+
 .hero-soft-panel {
     position: relative;
     background: #eef5ef;
@@ -119,7 +120,7 @@ h1, h2, h3, .hero-title, .section-title {
 .hero-bubble {
     position: absolute;
     border-radius: 50%;
-    background: rgba(83, 167, 118, 0.08);
+    background: rgba(84, 210, 137, 0.21);
     pointer-events: none;
 }
 
@@ -207,7 +208,13 @@ h1, h2, h3, .hero-title, .section-title {
 }
 
 .section-space {
-    padding: 90px 0;
+    padding: 80px 0;
+}
+
+.HIW-soft-panel {
+    position: relative;
+    background: #eef5ef;
+    overflow: hidden;
 }
 
 .about-box,
@@ -222,6 +229,10 @@ h1, h2, h3, .hero-title, .section-title {
     font-size: clamp(2rem, 4vw, 3rem);
     margin-bottom: 10px;
     text-align: center;
+}
+
+.WSS-space {
+    margin-top: 40px;
 }
 
 .small-benefits p {

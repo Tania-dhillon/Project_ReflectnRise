@@ -164,7 +164,7 @@ require_once __DIR__ . '/includes/header.php';
     </div>
 </section>
 
-<section class="section-space" id="how-it-works">
+<section class="section-space HIW-soft-panel" id="how-it-works">
     <div class="container">
         <div class="text-center mb-5">
             <h2 class="section-title">How it works</h2>
@@ -221,7 +221,7 @@ require_once __DIR__ . '/includes/header.php';
     </div>
 </section>
 
-<section class="section-space pt-0">
+<section class="section-space WSS-space pt-0">
     <div class="container">
         <div class="text-center mb-5">
             <h2 class="section-title">What students say</h2>
