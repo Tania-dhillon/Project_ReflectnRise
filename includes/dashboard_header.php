@@ -1,10 +1,9 @@
 <?php
+// dashboard header
 // ------------------------------------------------------------
-// Shared dashboard header
-// ------------------------------------------------------------
-// Loads auth protection, Bootstrap, icons and dashboard styles.
-// Include this at the top of all logged-in app pages.
-// ------------------------------------------------------------
+// This loads auth protection, Bootstrap, icons and dashboard style
+
+
 
 require_once __DIR__ . '/auth.php';
 require_once __DIR__ . '/db.php';

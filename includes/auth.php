@@ -1,10 +1,9 @@
 <?php
-// ------------------------------------------------------------
 // Authentication helper functions
 // ------------------------------------------------------------
-// This file handles session start, login status checks,
-// redirect helpers, and output escaping helper.
-// ------------------------------------------------------------
+// This is for the user authentication - session start, login status checks,
+// redirect helpers, and output escaping helper
+
 
 // Start session once so user login data is available on all pages
 if (session_status() === PHP_SESSION_NONE) {
@@ -12,7 +11,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 /**
- * Check whether the user is currently logged in.
+ * Checks whether the user is currently logged in or not
  *
  * @return bool
  */
@@ -22,8 +21,7 @@ function isLoggedIn(): bool
 }
 
 /**
- * Redirect user if they are already logged in.
- * Useful on login/signup pages.
+ * This will redirect the user if they are already logged inn
  *
  * @param string $location
  * @return void
@@ -37,7 +35,7 @@ function redirectIfLoggedIn(string $location = 'dashboard.php'): void
 }
 
 /**
- * Protect a page so only logged-in users can access it.
+ * This protects a page so only users that are logged in can access it
  *
  * @param string $location
  * @return void
@@ -51,7 +49,7 @@ function requireLogin(string $location = 'login.php'): void
 }
 
 /**
- * Safely escape output in HTML.
+ * This will safely escape output in HTML
  *
  * @param string|null $value
  * @return string

@@ -1,14 +1,12 @@
 <?php
-// ------------------------------------------------------------
 // Daily check-in page
 // ------------------------------------------------------------
-// This page contains the multi-step daily check-in form.
+// This page contains the multi-step daily check-in forms
 // Step 1: mood selection
 // Step 2: energy/stress/sleep sliders
 // Step 3: influence tags
 // Step 4: free note
 // On submit the check-in is stored in MySQL.
-// ------------------------------------------------------------
 
 require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/dashboard_header.php';

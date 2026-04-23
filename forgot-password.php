@@ -1,15 +1,14 @@
 <?php
-// ------------------------------------------------------------
 // Forgot password page
 // ------------------------------------------------------------
 // This page accepts an email address, creates a secure reset
-// token, stores it in the database, and emails the reset link.
-// ------------------------------------------------------------
+// token, stores it in the database and then will email the reset link
+// However, this has failed, does not send email to user, perhas due to it being locally hosted
 
 require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/auth.php';
 
-// Redirect logged-in users away from auth screens
+// Redirects logged-in users away from auth page
 redirectIfLoggedIn();
 
 $success = '';
@@ -23,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $error = 'Please enter a valid email address.';
     } else {
-        // Check whether user exists
+        // Checks whether user exists
         $stmt = $pdo->prepare('SELECT id, email FROM users WHERE email = ? LIMIT 1');
         $stmt->execute([$email]);
         $user = $stmt->fetch();
@@ -37,19 +36,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $token = bin2hex(random_bytes(32));
             $expiresAt = date('Y-m-d H:i:s', strtotime('+1 hour'));
 
-            // Remove any old unused reset tokens for this user
+            // Removes any old unused reset tokens for this user
             $deleteOld = $pdo->prepare('DELETE FROM password_resets WHERE user_id = ?');
             $deleteOld->execute([$user['id']]);
 
-            // Store new reset token
+            // Stores new reset token
             $insert = $pdo->prepare('INSERT INTO password_resets (user_id, email, token, expires_at) VALUES (?, ?, ?, ?)');
             $insert->execute([$user['id'], $user['email'], $token, $expiresAt]);
 
             // Build reset link
-            // IMPORTANT:
-            // Update APP_URL in includes/config.php to your real domain or local URL
             require_once __DIR__ . '/includes/config.php';
-            $resetLink = rtrim(APP_URL, '/') . '/reset-password.php?token=' . urlencode($token);
+            $resetLink = rtrim(APP_URL,'http://localhost/ReflectnRise') . '/reset-password.php?token=' . urlencode($token);
 
             // Email details
             $to = $user['email'];
@@ -65,8 +62,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $headers .= "Reply-To: " . MAIL_FROM_EMAIL . "\r\n";
             $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
-            // Attempt to send email using PHP mail()
-            // Note: On some servers you may later replace this with PHPMailer SMTP
             @mail($to, $subject, $message, $headers);
         }
 

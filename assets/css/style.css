@@ -1,10 +1,7 @@
-/* ------------------------------------------------------------
-   Reflect & Rise - Main stylesheet
+/* Reflect & Rise - Main stylesheet
    ------------------------------------------------------------
-   This stylesheet controls the homepage and auth page design.
-   It uses Bootstrap for layout and custom CSS for the visual
-
-   ------------------------------------------------------------ */
+   This is the stylesheet for the homepage/dashboard and auth page design.
+   Bootstrap for layout and custom CSS for the visuals */
 
 :root {
     --bg: #fbfaf7;

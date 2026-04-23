@@ -4,8 +4,8 @@
 // ------------------------------------------------------------
 // Lets users create, edit, delete and view wellbeing goals.
 // Goals can have category, status, target value, current value,
-// unit and due date. 
-//Search bar added
+// unit and due date
+// Search bar addednow so users can search through their goals
 
 
 require_once __DIR__ . '/includes/db.php';
@@ -128,7 +128,7 @@ $stmt->execute([$userId]);
 $allGoals = $stmt->fetchAll();
 
 // ------------------------------------------------------------
-// Apply search + category filter
+// Search + category filter
 // ------------------------------------------------------------
 $filteredGoals = array_values(array_filter($allGoals, function ($goal) use ($search, $categoryFilter) {
     $matchesCategory = $categoryFilter === 'All Categories' || strcasecmp($goal['category'], $categoryFilter) === 0;
@@ -457,13 +457,13 @@ $completedGoals = array_values(array_filter($filteredGoals, fn($g) => $g['status
                 </div>
 
                 <div class="goals-grid-three mb-3">
-                    <input type="number" name="target_value" class="form-control goals-input" placeholder="Target *" min="1" required>
-                    <input type="number" name="current_value" class="form-control goals-input" value="0" min="0">
-                    <input type="text" name="unit" class="form-control goals-input" placeholder="Unit (e.g. days)">
+                    <input type="number" name="target_value" class="form-control goals-input" placeholder="Goal Target*" min="1" required>
+                    <input type="number" name="current_value" class="form-control goals-input" placeholder="Currently at:" min="0">
+                    <input type="text" name="unit" class="form-control goals-input" placeholder="Unit - days, jobs...">
                 </div>
 
                 <div class="mb-4">
-                    <input type="date" name="due_date" class="form-control goals-input">
+                    <input type="date" name="due_date" class="form-control goals-input" placeholder="Select Due-date">
                 </div>
 
                 <div class="goals-modal-actions">

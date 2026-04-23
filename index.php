@@ -2,8 +2,7 @@
 // Homepage
 // ------------------------------------------------------------
 // This is the homepage of Reflect & Rise.
-// It includes brief information, benefits, features, FAQ section, buttons...
-// ------------------------------------------------------------
+// It includes brief information, benefits, features, FAQ section, buttons etc...
 
 require_once __DIR__ . '/includes/header.php';
 ?>

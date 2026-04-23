@@ -1,15 +1,9 @@
 <?php
-// ------------------------------------------------------------
 // Journal page
 // ------------------------------------------------------------
 // Shows journal cards with search + category filter.
-// Supports:
-// - listing free write journal entries
-// - listing saved guided reflections
-// - modal view for full entry
-// - delete action
-// - new entry modal for free write journal item
-// ------------------------------------------------------------
+
+
 
 require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/dashboard_header.php';
@@ -20,9 +14,9 @@ $categoryFilter = trim($_GET['category'] ?? 'All Categories');
 $success = '';
 $error = '';
 
-// ------------------------------------------------------------
-// Handle new journal entry submission
-// ------------------------------------------------------------
+// ----------------------------------------------------
+// new journal entry submission
+// ----------------------------------------------------
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['form_type'] ?? '') === 'new_journal_entry') {
     $title = trim($_POST['title'] ?? '');
     $entryCategory = trim($_POST['entry_category'] ?? 'Free Write');
@@ -45,9 +39,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['form_type'] ?? '') === 'ne
     }
 }
 
-// ------------------------------------------------------------
-// Handle delete action
-// ------------------------------------------------------------
+// -------------------------------------
+// delete action for entry
+// -------------------------------------
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['form_type'] ?? '') === 'delete_journal_entry') {
     $entryId = (int)($_POST['entry_id'] ?? 0);
     $entrySource = trim($_POST['entry_source'] ?? '');
@@ -65,9 +59,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['form_type'] ?? '') === 'de
     }
 }
 
-// ------------------------------------------------------------
-// Fetch journal + reflection entries into one combined list
-// ------------------------------------------------------------
+// ------------------------------------------------------
+// Fetches journal and reflection entries
+// ------------------------------------------------------
 $journalStmt = $pdo->prepare('
     SELECT
         id,
@@ -103,7 +97,7 @@ $reflectionEntries = $reflectionStmt->fetchAll();
 
 $entries = array_merge($journalEntries, $reflectionEntries);
 
-// Filter entries in PHP for simplicity
+
 $filteredEntries = array_values(array_filter($entries, function ($entry) use ($search, $categoryFilter) {
     $matchesCategory = $categoryFilter === 'All Categories' || strcasecmp($entry['category'], $categoryFilter) === 0;
 
@@ -122,12 +116,12 @@ $filteredEntries = array_values(array_filter($entries, function ($entry) use ($s
     return $matchesCategory && str_contains($haystack, $needle);
 }));
 
-// Sort newest first
+// Sorts newest first
 usort($filteredEntries, function ($a, $b) {
     return strtotime($b['created_at']) <=> strtotime($a['created_at']);
 });
 
-// Build category list dynamically
+// Builds category list 
 $categoryOptions = ['All Categories', 'Free Write', 'Reflection', 'Gratitude', 'Goals', 'Stress Relief', 'Self Care', 'Motivation', 'Relationships', 'Work', 'Academics', 'Sleep', 'Health', 'Personal Growth'];
 foreach ($entries as $entry) {
     if (!in_array($entry['category'], $categoryOptions, true)) {
@@ -211,7 +205,7 @@ if (($idx = array_search('Free Write', $categoryOptions, true)) !== false) {
                     </div>
                 </div>
 
-                <!-- Entry View Modal -->
+                <!-- Entry View -->
                 <div class="modal fade journal-modal" id="<?= e($modalId); ?>" tabindex="-1" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content journal-modal-content">
@@ -252,7 +246,7 @@ if (($idx = array_search('Free Write', $categoryOptions, true)) !== false) {
     </div>
 </div>
 
-<!-- New Journal Entry Modal -->
+<!-- New Journal Entry -->
 <div class="modal fade journal-modal" id="newEntryModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content journal-modal-content">

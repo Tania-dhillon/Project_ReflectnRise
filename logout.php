@@ -1,9 +1,7 @@
 <?php
-// ------------------------------------------------------------
 // Logout page
 // ------------------------------------------------------------
-// This file clears the user session and redirects back to login.
-// ------------------------------------------------------------
+// This file clears the user session and redirects back to homepage
 
 session_start();
 session_unset();

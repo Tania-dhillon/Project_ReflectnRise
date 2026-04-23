@@ -1,10 +1,7 @@
 <?php
-// ------------------------------------------------------------
 // User login page
 // ------------------------------------------------------------
-// This page validates user credentials and creates the login
-// session if the email/password is correct.
-// ------------------------------------------------------------
+// This page validates user credentials and creates the login session if the user email/password is correct
 
 require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/auth.php';
@@ -35,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user_email'] = $user['email'];
             $_SESSION['user_name'] = !empty($user['first_name']) ? $user['first_name'] : preg_replace('/@.*/', '', $user['email']);
 
-            // Redirect to dashboard after successful login
+            // Redirects to dashboard after successful login
             header('Location: dashboard.php');
             exit;
         } else {

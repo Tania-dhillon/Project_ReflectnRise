@@ -1,10 +1,9 @@
 <?php
-// ------------------------------------------------------------
 // Reset password page
 // ------------------------------------------------------------
 // This page validates the reset token and lets the user set
-// a new password. Once used, the token is marked as used.
-// ------------------------------------------------------------
+// a new password. Once used, the token is marked as used
+
 
 require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/auth.php';
@@ -41,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $validToken) {
         $updateUser = $pdo->prepare('UPDATE users SET password = ? WHERE id = ?');
         $updateUser->execute([$hashedPassword, $resetRow['user_id']]);
 
-        // Mark token as used
+        // Marks token as used
         $markUsed = $pdo->prepare('UPDATE password_resets SET used_at = NOW() WHERE id = ?');
         $markUsed->execute([$resetRow['id']]);
 

@@ -1,11 +1,10 @@
 <?php
-// ------------------------------------------------------------
 // Insights page
 // ------------------------------------------------------------
 // Shows wellbeing analytics using data from daily check-ins,
 // reflection entries and journal entries.
-// Includes 7 / 14 / 30 day filters.
-// ------------------------------------------------------------
+// Also includes 7 / 14 / 30 day filters
+-
 
 require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/dashboard_header.php';
@@ -38,7 +37,7 @@ $reflectionCountStmt = $pdo->prepare('SELECT COUNT(*) AS total FROM reflection_e
 $reflectionCountStmt->execute([$userId, $startDate, $endDate]);
 $reflectionCount = (int)($reflectionCountStmt->fetch()['total'] ?? 0);
 
-// Build date labels
+// Builds date labels
 $dateLabels = [];
 $moodSeries = [];
 $energySeries = [];
@@ -90,7 +89,7 @@ foreach ($checkins as $row) {
     }
 }
 
-// Fill forward previous known value for charts, fallback to neutral values
+// Fills previous known value for charts, fallbacks to neutral values
 $lastMood = 3;
 $lastEnergy = 3;
 $moodChartValues = [];

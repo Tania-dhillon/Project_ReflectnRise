@@ -1,9 +1,7 @@
-// ------------------------------------------------------------
 // Guided reflections module JavaScript
 // ------------------------------------------------------------
-// Handles category prompt filtering, random prompt selection,
-// new prompt generation, and UI state switching.
-// ------------------------------------------------------------
+// This includes category prompt filtering, random prompt selection, new prompt generation etc
+
 
 document.addEventListener('DOMContentLoaded', function () {
     const getPromptBtn = document.getElementById('getPromptBtn');

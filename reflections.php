@@ -1,10 +1,8 @@
 <?php
-// ------------------------------------------------------------
 // Guided reflections page
 // ------------------------------------------------------------
 // Users can choose a category, generate a random prompt, write
-// a response, and save it into the database.
-// ------------------------------------------------------------
+// a response, and save it into the database
 
 require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/dashboard_header.php';
@@ -13,7 +11,7 @@ $success = '';
 $error = '';
 $selectedCategory = trim($_GET['category'] ?? 'All Topics');
 
-// Fetch prompts from database
+// Fetches prompts from database
 $promptStmt = $pdo->query('SELECT id, category, prompt_text, difficulty FROM reflection_prompts ORDER BY category, id');
 $allPrompts = $promptStmt->fetchAll();
 
@@ -46,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $promptText,
             $responseText
         ]);
-        $success = 'Your reflection has been saved successfully.';
+        $success = 'Your reflection has been saved successfully. Find all reflections in your Journal';
     }
 }
 ?>

@@ -1,16 +1,15 @@
 <?php
-// ------------------------------------------------------------
 // Dashboard page
 // ------------------------------------------------------------
 // This page shows the main logged-in dashboard layout with
 // summary cards, mood chart, recent activity, and goals area.
-// Current data is a mix of live totals and starter demo content.
-// ------------------------------------------------------------
+
+
 
 require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/dashboard_header.php';
 
-// Force dashboard greeting to use first_name from database
+// Dashboard greeting uses first_name from database
 $welcomeName = $_SESSION['user_name'] ?? '';
 $nameStmt = $pdo->prepare('SELECT first_name, email FROM users WHERE id = ? LIMIT 1');
 $nameStmt->execute([$_SESSION['user_id']]);
@@ -24,7 +23,7 @@ if ($nameRow) {
 }
 
 
-// Count total check-ins for current user
+// Counts total check-ins for current user
 $totalCheckinsStmt = $pdo->prepare('SELECT COUNT(*) AS total_checkins FROM daily_checkins WHERE user_id = ?');
 $totalCheckinsStmt->execute([$_SESSION['user_id']]);
 $totalCheckins = (int)($totalCheckinsStmt->fetch()['total_checkins'] ?? 0);
@@ -40,7 +39,7 @@ $thisWeekStmt = $pdo->prepare('SELECT COUNT(*) AS total_week FROM daily_checkins
 $thisWeekStmt->execute([$_SESSION['user_id']]);
 $thisWeek = (int)($thisWeekStmt->fetch()['total_week'] ?? 0);
 
-// Simple streak starter logic based on distinct checkin dates
+// Starts simple streak based on users checkin dates
 $streakStmt = $pdo->prepare('SELECT DATE(created_at) AS d FROM daily_checkins WHERE user_id = ? GROUP BY DATE(created_at) ORDER BY d DESC');
 $streakStmt->execute([$_SESSION['user_id']]);
 $dates = $streakStmt->fetchAll(PDO::FETCH_COLUMN);
@@ -51,7 +50,7 @@ foreach ($dates as $d) {
         $streak++;
         $expected->modify('-1 day');
     } elseif ($d === $expected->modify('-1 day')->format('Y-m-d') && $streak === 0) {
-        // allow yesterday to start streak if user did not check in yet today
+        // allows yesterday to start streak if user did not check in yet today
         $streak++;
         $expected->modify('-1 day');
     } else {
@@ -59,12 +58,12 @@ foreach ($dates as $d) {
     }
 }
 
-// Fetch recent activity
+// Fetches recent activity
 $recentStmt = $pdo->prepare('SELECT mood_label, note, created_at FROM daily_checkins WHERE user_id = ? ORDER BY created_at DESC LIMIT 5');
 $recentStmt->execute([$_SESSION['user_id']]);
 $recentActivities = $recentStmt->fetchAll();
 
-// Fetch latest goal for preview panel
+// Fetches latest goal for preview panel
 $latestGoalStmt = $pdo->prepare('
     SELECT id, title, category, status, target_value, current_value, unit
     FROM goals
@@ -80,7 +79,7 @@ $completedGoalsCountStmt->execute([$_SESSION['user_id']]);
 $completedGoalsCount = (int)($completedGoalsCountStmt->fetch()['total_completed'] ?? 0);
 
 
-// Mood trend data for last 10 entries
+// Will get mood trend data for last 10 entries
 $trendStmt = $pdo->prepare('SELECT DATE_FORMAT(created_at, "%b %e") AS label, mood_rating FROM daily_checkins WHERE user_id = ? ORDER BY created_at ASC LIMIT 10');
 $trendStmt->execute([$_SESSION['user_id']]);
 $trendRows = $trendStmt->fetchAll();

@@ -1,10 +1,10 @@
 <?php
-// ------------------------------------------------------------
+
 // User signup page
 // ------------------------------------------------------------
-// This page creates a new user account using first name,
-// email + password. Passwords are stored securely.
-// ------------------------------------------------------------
+// This page creates a new user account using first name, email + password. 
+// Passwords are stored securely.
+
 
 require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/auth.php';
@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'] ?? '';
     $confirmPassword = $_POST['confirm_password'] ?? '';
 
-    // Validate first name
+    // Validates first name
     if ($firstName === '') {
         $errors[] = 'Please enter your first name.';
     }
@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = 'Please enter a valid email address.';
     }
 
-    // Validate password length
+    // Validates password length
     if (strlen($password) < 8) {
         $errors[] = 'Password must be at least 8 characters long.';
     }
@@ -55,11 +55,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Securely hash the password before saving
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-            // Insert new user into database
+            // Inserts new user into database
             $insert = $pdo->prepare('INSERT INTO users (first_name, email, password) VALUES (?, ?, ?)');
             $insert->execute([$firstName, $email, $hashedPassword]);
 
-            $success = 'Account created successfully. You can now log in.';
+            $success = 'Account created successfully. You can now log in';
             $firstName = '';
             $email = '';
         }
@@ -138,5 +138,5 @@ require_once __DIR__ . '/includes/header.php';
 </body>
 </html>
 
-<script>// auth-logo-link-fix
+<script>
 document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".auth-logo").forEach(function(el){el.style.cursor="pointer";el.addEventListener("click",function(){window.location="index.php";});});});</script>
