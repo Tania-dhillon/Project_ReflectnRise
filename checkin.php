@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $note
         ]);
 
-        $success = 'Your daily check-in has been saved successfully.';
+        $success = 'Your daily check-in has been saved successfully. Insights have been updated.';
     }
 }
 ?>

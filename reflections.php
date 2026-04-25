@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $promptText,
             $responseText
         ]);
-        $success = 'Your reflection has been saved successfully. Find all reflections in your Journal';
+        $success = 'Your reflection has been saved successfully. Find all reflections in your Journal.';
     }
 }
 ?>

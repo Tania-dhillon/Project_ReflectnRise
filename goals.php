@@ -288,10 +288,18 @@ $completedGoals = array_values(array_filter($filteredGoals, fn($g) => $g['status
                                     </select>
                                 </div>
 
+                                <div class="mb-1">
+                                    <label class="goals-labell"> Goal Progress:</label>
+                                </div>
+
                                 <div class="goals-grid-three mb-3">
                                     <input type="number" name="target_value" class="form-control goals-input" value="<?= (int)$goal['target_value']; ?>" min="1" placeholder="Target *" required>
                                     <input type="number" name="current_value" class="form-control goals-input" value="<?= (int)$goal['current_value']; ?>" min="0" placeholder="Current">
                                     <input type="text" name="unit" class="form-control goals-input" value="<?= e($goal['unit']); ?>" placeholder="Unit (e.g. days)">
+                                </div>
+
+                                <div class="mb-1">
+                                    <label class="goals-labell"> Choose a Due-Date:</label>
                                 </div>
 
                                 <div class="mb-4">
@@ -400,10 +408,18 @@ $completedGoals = array_values(array_filter($filteredGoals, fn($g) => $g['status
                                     </select>
                                 </div>
 
+                                <div class="mb-1">
+                                    <label class="goals-labell"> Goal Progress:</label>
+                                </div>
+
                                 <div class="goals-grid-three mb-3">
                                     <input type="number" name="target_value" class="form-control goals-input" value="<?= (int)$goal['target_value']; ?>" min="1" placeholder="Target *" required>
                                     <input type="number" name="current_value" class="form-control goals-input" value="<?= (int)$goal['current_value']; ?>" min="0" placeholder="Current">
                                     <input type="text" name="unit" class="form-control goals-input" value="<?= e($goal['unit']); ?>" placeholder="Unit (e.g. days)">
+                                </div>
+
+                                <div class="mb-1">
+                                    <label class="goals-labell"> Choose a Due-Date:</label>
                                 </div>
 
                                 <div class="mb-4">
@@ -456,14 +472,22 @@ $completedGoals = array_values(array_filter($filteredGoals, fn($g) => $g['status
                     </select>
                 </div>
 
+                <div class="mb-1">
+                    <label class="goals-labell"> Goal Progress:</label>
+                </div>
+
                 <div class="goals-grid-three mb-3">
                     <input type="number" name="target_value" class="form-control goals-input" placeholder="Goal Target*" min="1" required>
                     <input type="number" name="current_value" class="form-control goals-input" placeholder="Currently at:" min="0">
-                    <input type="text" name="unit" class="form-control goals-input" placeholder="Unit - days, jobs...">
+                    <input type="text" name="unit" class="form-control goals-input" placeholder="Unit (e.g. days, jobs...)">
+                </div>
+
+                <div class="mb-1">
+                    <label class="goals-labell"> Choose a Due-Date:</label>
                 </div>
 
                 <div class="mb-4">
-                    <input type="date" name="due_date" class="form-control goals-input" placeholder="Select Due-date">
+                    <input type="date" name="due_date" class="form-control goals-input" >
                 </div>
 
                 <div class="goals-modal-actions">

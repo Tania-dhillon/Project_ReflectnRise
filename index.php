@@ -33,6 +33,11 @@ require_once __DIR__ . '/includes/header.php';
     <div class="hero-bubble hero-bubble-one"></div>
     <div class="hero-bubble hero-bubble-two"></div>
     <div class="hero-bubble hero-bubble-three"></div>
+    <div class="hero-bubble hero-bubble-four"></div>
+    <div class="hero-bubble hero-bubble-five"></div>
+    <div class="hero-bubble hero-bubble-six"></div>
+    <div class="hero-bubble hero-bubble-seven"></div>
+    <div class="hero-bubble hero-bubble-eight"></div>
 
     <div class="container hero-container">
         <div class="pill-badge mx-auto mb-3">

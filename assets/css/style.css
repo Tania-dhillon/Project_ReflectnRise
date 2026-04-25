@@ -1,13 +1,15 @@
 /* Reflect & Rise - Main stylesheet
    ------------------------------------------------------------
    This is the stylesheet for the homepage/dashboard and auth page design.
-   Bootstrap for layout and custom CSS for the visuals */
+   Bootstrap for layout and custom CSS for the visuals. 
+   Also some labels may say mindful as that was my orginal name I came up with before it changed to ReflectNRise */
+
 
 :root {
     --bg: #fbfaf7;
     --card: #ffffff;
     --soft-card: #f2f5ef;
-    --muted: #6d7a76;
+    --muted: #5a6562;
     --text: #1f2533;
     --green: #62b58a;
     --green-dark: #4ea173;
@@ -117,13 +119,18 @@ h1, h2, h3, .hero-title, .section-title {
 .hero-bubble {
     position: absolute;
     border-radius: 50%;
-    background: rgba(84, 210, 137, 0.21);
+    background: rgba(94, 209, 142, 0.21);
     pointer-events: none;
 }
 
-.hero-bubble-one { width: 220px; height: 220px; top: -60px; right: 10%; }
-.hero-bubble-two { width: 120px; height: 120px; left: 8%; top: 120px; }
-.hero-bubble-three { width: 80px; height: 80px; right: 24%; bottom: 80px; }
+.hero-bubble-one { width: 250px; height: 250px; top: -60px; right: 10%; }
+.hero-bubble-two { width: 140px; height: 140px; left: 15%; top: 25px; }
+.hero-bubble-three { width: 100px; height: 100px; right: 20%; bottom: 220px; }
+.hero-bubble-four { width: 150px; height: 150px; left: 12%; bottom: 20px; }
+.hero-bubble-five { width: 160px; height: 160px; right: -60px; bottom: 330px; }
+.hero-bubble-six { width: 200px; height: 200px; left: -40px; bottom: 300px; }
+.hero-bubble-seven { width: 80px; height: 80px; left: 25%; bottom: 275px; }
+.hero-bubble-eight { width: 80px; height: 80px; right: 5%; bottom: 30px; }
 
 .hero-container {
     max-width: 860px;
@@ -163,7 +170,7 @@ h1, h2, h3, .hero-title, .section-title {
 .hero-note,
 .section-subtitle {
     color: #8a938f;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 .mood-cards {
@@ -210,13 +217,13 @@ h1, h2, h3, .hero-title, .section-title {
 
 .HIW-soft-panel {
     position: relative;
-    background: #eef5ef;
+    background: #e4f8e6;
     overflow: hidden;
 }
 
 .about-box,
 .cta-box {
-    background: #f3f6ef;
+    background: #ddf0e3;
     border: 1px solid #e8eee5;
     border-radius: 28px;
     padding: 46px;
@@ -524,12 +531,11 @@ h1, h2, h3, .hero-title, .section-title {
 }
 
 
-/* ---------------------------
-   Dashboard layout styles
+/* Dashboard layout styles
    --------------------------- */
 
 .app-body {
-    background: #f8f7f2;
+    background: #f8f7ef;
     color: #1d2433;
 }
 
@@ -641,7 +647,7 @@ h1, h2, h3, .hero-title, .section-title {
 
 .welcome-card {
     position: relative;
-    background: #eef5ef;
+    background: #dff5e2;
     border: 1px solid #e4eee5;
     border-radius: 24px;
     padding: 24px 26px;
@@ -996,7 +1002,8 @@ h1, h2, h3, .hero-title, .section-title {
 }
 
 
-/* Authentiation page style for login/signup */
+/* Authentiation page style for login/signup 
+*/
 
 .auth-brand {
     display: flex;
@@ -1038,8 +1045,7 @@ h1, h2, h3, .hero-title, .section-title {
 }
 
 
-/* ---------------------
-   Guided reflections 
+/* Guided reflections 
    --------------------- */
 
 .reflections-wrap {
@@ -1234,8 +1240,7 @@ h1, h2, h3, .hero-title, .section-title {
 }
 
 
-/* ---------------------
-   Journal 
+/* Journal 
    ---------------------*/
 
 .journal-wrap {
@@ -1480,9 +1485,8 @@ h1, h2, h3, .hero-title, .section-title {
 }
 
 
-/* ------------------
-   Goals
-   ------------------*/
+/* Goals
+   -----------------*/
 
 .goals-wrap {
     max-width: 1120px;
@@ -1660,7 +1664,7 @@ h1, h2, h3, .hero-title, .section-title {
 }
 
 .goals-modal .modal-dialog {
-    max-width: 560px;
+    max-width: 680px;
 }
 
 .goals-modal-content {
@@ -1712,6 +1716,12 @@ h1, h2, h3, .hero-title, .section-title {
     gap: 12px;
 }
 
+.goals-labell {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #6c757d;
+    margin-left: 5px;
+}
 .goals-grid-three {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
