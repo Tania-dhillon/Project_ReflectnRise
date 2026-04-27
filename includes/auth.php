@@ -9,7 +9,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-/** Checks whether the user is currently logged in or not
+/** Checks whether the user is currently logged in or not.
  * @return bool
  */
 function isLoggedIn(): bool

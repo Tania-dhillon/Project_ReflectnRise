@@ -1,6 +1,6 @@
 <?php
 
-// Reflect & Rise - Application configuration
+// Reflect & Rise - Application configuration.
 
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'reflect_rise_db');

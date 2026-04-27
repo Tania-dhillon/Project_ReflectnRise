@@ -1,7 +1,7 @@
 <?php
 // dashboard header
 // ------------------------------------------------------------
-// This loads auth protection, Bootstrap, icons and dashboard style
+// This loads auth protection, Bootstrap, icons and dashboard style.
 
 
 

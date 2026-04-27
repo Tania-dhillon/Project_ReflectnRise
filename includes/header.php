@@ -1,5 +1,5 @@
 <?php
-// HTML header
+// HTML header.
 
 require_once __DIR__ . '/auth.php';
 ?>

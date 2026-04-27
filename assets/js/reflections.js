@@ -1,6 +1,6 @@
 // Guided reflections module JavaScript
 // ------------------------------------------------------------
-// This includes category prompt filtering, random prompt selection, new prompt generation etc
+// This includes category prompt filtering, random prompt selection, new prompt generation etc.
 
 
 document.addEventListener('DOMContentLoaded', function () {

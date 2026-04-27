@@ -1,5 +1,5 @@
 
--- Reflect & Rise database structure
+-- Reflect & Rise database structure.
 
 CREATE DATABASE IF NOT EXISTS reflect_rise_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE reflect_rise_db;

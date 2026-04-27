@@ -3,7 +3,7 @@
 // - dashboard mood chart
 // - multi-step check-in navigation
 // - mood selection state
-// - range slider labels
+// - range slider labels.
 
 document.addEventListener('DOMContentLoaded', function () {
     // Dashboard mood trend chart

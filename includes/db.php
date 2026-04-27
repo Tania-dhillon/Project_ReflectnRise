@@ -1,6 +1,6 @@
 <?php
 // Database connection 
-// ------------------------------------------------------------
+// --------------------------------------------------
 // This file creates a PDO database connection
 
 require_once __DIR__ . '/config.php';
