@@ -10,7 +10,6 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 /** Checks whether the user is currently logged in or not
- *
  * @return bool
  */
 function isLoggedIn(): bool
@@ -19,7 +18,6 @@ function isLoggedIn(): bool
 }
 
 /** This will redirect the user if they are already logged inn
- *
  * @param string $location
  * @return void
  */

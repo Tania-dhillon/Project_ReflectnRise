@@ -1,4 +1,4 @@
-// Insights module charts
+// Insights charts
 
 document.addEventListener('DOMContentLoaded', function () {
     if (typeof Chart === 'undefined') return;
